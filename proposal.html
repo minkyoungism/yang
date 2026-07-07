@@ -1,0 +1,223 @@
+<title>양진석 선생님 브랜드 제안</title>
+<style>
+  :root {
+    --paper: #F5F6F4;
+    --paper-raised: #FFFFFF;
+    --ink: #16202B;
+    --ink-sub: #57636F;
+    --line: rgba(22, 32, 43, .13);
+    --blue: #1D4E89;
+    --blue-deep: #123762;
+    --red: #B23B30;
+    --gold: #B7862E;
+    --teal: #2E8F86;
+    --radius: 6px;
+    --font-kr: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #12181D; --paper-raised: #1A2229;
+      --ink: #E7ECEF; --ink-sub: #9AA7B0;
+      --line: rgba(231, 236, 239, .14);
+      --blue: #6FA8DC; --blue-deep: #3E7CB1;
+      --red: #E2695C; --gold: #E3B15C; --teal: #4FD9C7;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12181D; --paper-raised: #1A2229;
+    --ink: #E7ECEF; --ink-sub: #9AA7B0;
+    --line: rgba(231, 236, 239, .14);
+    --blue: #6FA8DC; --blue-deep: #3E7CB1;
+    --red: #E2695C; --gold: #E3B15C; --teal: #4FD9C7;
+  }
+  :root[data-theme="light"] {
+    --paper: #F5F6F4; --paper-raised: #FFFFFF;
+    --ink: #16202B; --ink-sub: #57636F;
+    --line: rgba(22, 32, 43, .13);
+    --blue: #1D4E89; --blue-deep: #123762;
+    --red: #B23B30; --gold: #B7862E; --teal: #2E8F86;
+  }
+
+  * , *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--font-kr); line-height: 1.75; word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+  }
+  .doc { max-width: 760px; margin: 0 auto; padding: 64px 28px 100px; }
+
+  h1, h2, h3 { text-wrap: balance; font-weight: 800; letter-spacing: -0.01em; margin: 0; }
+  p { margin: 0; }
+
+  header.title {
+    padding-bottom: 32px; margin-bottom: 40px; border-bottom: 2px solid var(--ink);
+  }
+  header.title .eyebrow {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--blue); display: block; margin-bottom: 12px;
+  }
+  header.title h1 { font-size: clamp(24px, 4vw, 32px); line-height: 1.35; margin-bottom: 10px; }
+  header.title .sub { color: var(--ink-sub); font-size: 15px; }
+
+  section.block { margin-bottom: 52px; }
+  .block-num {
+    font-family: var(--font-mono); font-size: 12.5px; color: var(--blue);
+    display: block; margin-bottom: 6px;
+  }
+  h2.block-title { font-size: 21px; margin-bottom: 16px; }
+  .block p.lead { color: var(--ink-sub); font-size: 15.5px; margin-bottom: 18px; }
+
+  .fact-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px; margin-bottom: 6px;
+  }
+  .fact {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 12px 14px; font-size: 13.5px;
+  }
+  .fact strong { display: block; font-size: 12px; color: var(--blue-deep); font-family: var(--font-mono); margin-bottom: 4px; }
+
+  .callout {
+    background: var(--paper-raised); border-left: 3px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 16px 20px; font-size: 14.5px; color: var(--ink-sub); margin-top: 14px;
+  }
+  .callout strong { color: var(--ink); }
+
+  ol.steps, ul.plain { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  ol.steps li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; font-size: 14.5px; color: var(--ink-sub); }
+  ol.steps li .n { font-family: var(--font-mono); font-weight: 700; color: var(--blue); }
+  ol.steps li strong { color: var(--ink); display: block; margin-bottom: 2px; font-size: 15px; }
+
+  .page-table { border-collapse: collapse; width: 100%; font-size: 14px; margin-top: 4px; }
+  .page-table th, .page-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .page-table th { font-size: 12px; font-family: var(--font-mono); color: var(--ink-sub); font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
+  .page-table td.file { font-family: var(--font-mono); font-size: 12.5px; color: var(--blue-deep); white-space: nowrap; }
+
+  .swatch-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .swatch { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--ink-sub); font-family: var(--font-mono); }
+  .swatch i { width: 16px; height: 16px; border-radius: 4px; display: inline-block; border: 1px solid var(--line); }
+
+  .open-items { display: flex; flex-direction: column; gap: 10px; }
+  .open-items li {
+    display: flex; gap: 10px; align-items: baseline; font-size: 14.5px; color: var(--ink-sub);
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px;
+  }
+  .open-items li::before { content: '○'; color: var(--gold); font-size: 12px; flex-shrink: 0; }
+
+  footer.note { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-sub); }
+</style>
+
+<div class="doc">
+  <header class="title">
+    <span class="eyebrow">YANG JINSEOK CHEMISTRY LAB · BRAND PROPOSAL</span>
+    <h1>학원·EBS는 그대로 유지하면서,<br>개인 브랜드로 사이드 수입원을 만드는 안</h1>
+    <p class="sub">지금까지 나눈 이야기와 실제로 만든 결과물을 한 번에 정리했습니다.</p>
+  </header>
+
+  <section class="block">
+    <span class="block-num">01</span>
+    <h2 class="block-title">왜 이 방향인가</h2>
+    <p class="lead">
+      EBS·이투스 출강은 계속 유지하시되, 의뢰가 오면 다 받는 게 아니라 좋은 것만 골라서 하실 수 있으려면
+      그 시간에 대신 채울 수 있는 고마진 사이드 수입원이 필요합니다. 개인 브랜드 사이트가 그 역할을 합니다.
+    </p>
+    <div class="callout">
+      선생님이 걱정하신 <strong>교재·문항 저작권 문제</strong>가 해결되면 이 방향은 훨씬 수월해집니다.
+      실제로 GPT가 만든 변형문제는 검산해보니 틀렸었고, 저희는 조건을 역산해서 끝까지 앞뒤가 맞는 걸 확인한
+      오리지널 문항 제작 방식을 검증했습니다 (아래 04번 참고).
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="block-num">02</span>
+    <h2 class="block-title">이미 갖고 계신 자산</h2>
+    <div class="fact-grid">
+      <div class="fact"><strong>경력</strong>27년, EBSi · 이투스 화학 강사</div>
+      <div class="fact"><strong>학력</strong>연세대학교 교육대학원</div>
+      <div class="fact"><strong>거점</strong>대치동 화학연구소</div>
+      <div class="fact"><strong>채널</strong>화학양진석티비 (유튜브)</div>
+      <div class="fact"><strong>닉네임</strong>"화학의 신"</div>
+      <div class="fact"><strong>시그니처 개념</strong>계단모형 · ㅏ공식</div>
+    </div>
+    <div class="callout">
+      브랜드는 결국 "이 사람만의 설명 방식"에서 나옵니다. 이미 20년 넘게 스스로 만들어온 개념화 방식과
+      별명이 있다는 게 가장 큰 자산이라, 새로 지어낼 필요 없이 이걸 전면에 세우는 방향으로 설계했습니다.
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="block-num">03</span>
+    <h2 class="block-title">4개 타겟으로 나눈 이유</h2>
+    <p class="lead">방문자마다 원하는 게 다르기 때문에, 홈페이지 하나에서 목적별로 바로 갈라지도록 설계했습니다.</p>
+    <ol class="steps">
+      <li><span class="n">A</span><div><strong>학생 · 학부모</strong>줌 그룹수업 / 소수정예 프리미엄 / 1:1 개인과외 — 밀도와 가격이 다른 3단계</div></li>
+      <li><span class="n">B</span><div><strong>학원 관계자</strong>인맥 없이도 문의 가능, 대신 조건이 맞는 의뢰만 선별해서 검토</div></li>
+      <li><span class="n">C</span><div><strong>예비 · 현직 강사</strong>제자 중 많은 수가 강사가 된 걸 증거로 내세우는 강사 양성과정 — 가장 차별화되는 상품</div></li>
+      <li><span class="n">D</span><div><strong>영상 콘텐츠</strong>화학양진석티비 무료 영상으로 신뢰를 먼저 쌓고, 유료 VOD·멤버십으로 연결</div></li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <span class="block-num">04</span>
+    <h2 class="block-title">저작권 문제, 이렇게 풉니다</h2>
+    <p class="lead">
+      "숫자만 바꾼 변형문제"가 아니라, 정답을 먼저 설계하고 조건을 역산해서 세 자료가 서로 앞뒤가 맞는지
+      끝까지 검산한 오리지널 문항만 사용합니다. 수능 원본을 베끼는 게 아니라 완전히 새로 설계하는 방식이라
+      저작권에서 자유롭고, 학원가에서 실제로 쓰는 "변형문제/N제" 제작 방식과 같은 원리입니다.
+    </p>
+    <div class="callout">
+      <strong>apply.html</strong>의 "문제 미리보기" 섹션에 실제 예시(약염기 B + 강산 + 강염기 중화, y·Kb 구하는 문항)를
+      넣어서 이 방식이 실제로 작동한다는 걸 바로 보여드릴 수 있게 해뒀습니다.
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="block-num">05</span>
+    <h2 class="block-title">지금까지 만든 것</h2>
+    <table class="page-table">
+      <thead><tr><th>파일</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="file">brand-home.html</td><td>허브 홈 — 소개, 시그니처 개념, 4개 경로 카드, 영상 미리보기</td></tr>
+        <tr><td class="file">apply.html</td><td>학생·학부모 신청 페이지 — 3단계 상품, 문제 미리보기</td></tr>
+        <tr><td class="file">academy.html</td><td>학원 섭외 문의 페이지 — 신뢰 지표, 검토 조건, 문의 폼</td></tr>
+        <tr><td class="file">training.html</td><td>강사 양성과정 페이지 — 4단계 커리큘럼</td></tr>
+        <tr><td class="file">watch.html</td><td>영상 콘텐츠 페이지 — 카테고리, 실제 유튜브 영상 연결</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block">
+    <span class="block-num">06</span>
+    <h2 class="block-title">색은 왜 이렇게 골랐나</h2>
+    <p class="lead">
+      메인 컬러는 코발트 블루입니다. 코발트 글래스가 나트륨의 강한 노란빛을 걸러내고 칼륨의 진짜 색을
+      보여주는 도구라는 데서 착안했습니다 — "현상 뒤의 원리를 보여준다"는 선생님 강의 철학과 맞닿아 있어서
+      골랐습니다. 보조 색(빨강·골드·틸)은 각각 불꽃반응 색이라, 메인 컬러(원리)로 현상을 관찰한다는 구조가
+      색으로도 읽히게 설계했습니다.
+    </p>
+    <div class="swatch-row">
+      <span class="swatch"><i style="background:#1D4E89"></i>#1D4E89 코발트 블루</span>
+      <span class="swatch"><i style="background:#B23B30"></i>#B23B30 스트론튬 레드</span>
+      <span class="swatch"><i style="background:#B7862E"></i>#B7862E 나트륨 골드</span>
+      <span class="swatch"><i style="background:#2E8F86"></i>#2E8F86 구리 틸</span>
+    </div>
+  </section>
+
+  <section class="block">
+    <span class="block-num">07</span>
+    <h2 class="block-title">아직 비어있는 부분</h2>
+    <ul class="open-items">
+      <li>실제 수업 신청 폼(네이버폼 등) 링크 — 지금은 자리만 잡아둔 상태</li>
+      <li>학원 섭외 문의 폼 연결처</li>
+      <li>강사 양성과정 신청 링크</li>
+      <li>유료 VOD·멤버십 가격 및 결제 방식</li>
+      <li>실제 수강 후기 (현재는 예시 placeholder)</li>
+    </ul>
+  </section>
+
+  <footer class="note">
+    전체 파일은 <span style="font-family:var(--font-mono);">c:\Users\WIN\Desktop\화학</span> 폴더에 있습니다.
+    브라우저로 <span style="font-family:var(--font-mono);">brand-home.html</span>을 열면 나머지 페이지까지 링크로 이동하며 확인하실 수 있습니다.
+  </footer>
+</div>

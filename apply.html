@@ -1,0 +1,235 @@
+<title>수업 신청 · 양진석 화학연구소</title>
+<style>
+  :root {
+    --paper: #EEF1F5; --paper-raised: #FFFFFF;
+    --ink: #16202B; --ink-sub: #57636F;
+    --line: rgba(22, 32, 43, .14);
+    --blue: #1D4E89; --blue-deep: #123762;
+    --red: #B23B30; --gold: #B7862E;
+    --shadow: 0 10px 30px rgba(22, 32, 43, .10);
+    --radius: 4px;
+    --font-kr: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #10161F; --paper-raised: #171F2B;
+      --ink: #E6ECF2; --ink-sub: #93A2AF;
+      --line: rgba(230, 236, 242, .16);
+      --blue: #6FA8DC; --blue-deep: #3E7CB1;
+      --red: #E2695C; --gold: #E3B15C;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #10161F; --paper-raised: #171F2B;
+    --ink: #E6ECF2; --ink-sub: #93A2AF;
+    --line: rgba(230, 236, 242, .16);
+    --blue: #6FA8DC; --blue-deep: #3E7CB1;
+    --red: #E2695C; --gold: #E3B15C;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  }
+  :root[data-theme="light"] {
+    --paper: #EEF1F5; --paper-raised: #FFFFFF;
+    --ink: #16202B; --ink-sub: #57636F;
+    --line: rgba(22, 32, 43, .14);
+    --blue: #1D4E89; --blue-deep: #123762;
+    --red: #B23B30; --gold: #B7862E;
+    --shadow: 0 10px 30px rgba(22, 32, 43, .10);
+  }
+
+  * , *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--font-kr); line-height: 1.7; word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 800; letter-spacing: -0.01em; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--blue);
+  }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; border-bottom: 1px solid var(--line);
+    max-width: 1040px; margin: 0 auto;
+  }
+  .topbar a.home { font-weight: 800; text-decoration: none; font-size: 14.5px; }
+  .topbar .crumb { font-size: 13px; color: var(--ink-sub); font-family: var(--font-mono); }
+
+  .page-hero {
+    max-width: 1040px; margin: 0 auto; padding: 64px 24px 40px;
+  }
+  .page-hero h1 { font-size: clamp(26px, 4.4vw, 40px); line-height: 1.32; margin: 14px 0 16px; }
+  .page-hero p.lede { color: var(--ink-sub); font-size: 16px; max-width: 560px; }
+
+  main { max-width: 1040px; margin: 0 auto; padding: 0 24px 90px; }
+
+  .ladder { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 8px; }
+  .tier {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 24px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .tier .tier-name { font-size: 19px; font-weight: 800; }
+  .tier .tier-price { font-family: var(--font-mono); font-size: 14px; color: var(--blue-deep); font-variant-numeric: tabular-nums; }
+  .tier ul { margin: 0; padding-left: 18px; color: var(--ink-sub); font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .tier.featured { border-color: var(--blue); box-shadow: var(--shadow); }
+  .tier.featured .tier-name { color: var(--blue-deep); }
+  .tier .cap { font-size: 12.5px; color: var(--ink-sub); font-family: var(--font-mono); }
+
+  .btn {
+    margin-top: auto; display: inline-flex; align-items: center; justify-content: center;
+    padding: 12px 18px; border-radius: var(--radius); text-decoration: none;
+    font-weight: 700; font-size: 14px; transition: opacity .15s ease;
+  }
+  .btn:hover { opacity: .88; }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-line { border: 1px solid var(--line); color: var(--ink); }
+
+  section { margin-top: 72px; }
+  .section-title { font-size: 20px; margin-bottom: 18px; }
+
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .why { border-left: 3px solid var(--blue); padding-left: 16px; }
+  .why h3 { font-size: 15.5px; margin-bottom: 6px; }
+  .why p { margin: 0; font-size: 13.5px; color: var(--ink-sub); }
+
+  .preview-card {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px; margin-top: 8px;
+  }
+  .preview-card .eq {
+    font-family: var(--font-mono); font-size: 14px; margin-bottom: 18px;
+  }
+  .preview-table-wrap { overflow-x: auto; margin-bottom: 18px; }
+  .preview-table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: 13.5px; }
+  .preview-table th, .preview-table td {
+    border: 1px solid var(--line); padding: 8px 12px; text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .preview-table th { background: var(--paper); font-weight: 700; }
+  .preview-list { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+  .preview-answer {
+    display: inline-block; font-size: 13px; font-weight: 700;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 100px;
+    padding: 6px 16px; color: var(--blue-deep);
+  }
+  .preview-note { margin-top: 14px; font-size: 12.5px; color: var(--ink-sub); }
+
+  footer {
+    max-width: 1040px; margin: 0 auto; padding: 40px 24px 64px;
+    border-top: 1px solid var(--line); font-size: 12.5px; color: var(--ink-sub);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+</style>
+
+<div class="topbar">
+  <a class="home" href="brand-home.html">양진석 화학연구소</a>
+  <span class="crumb">FOR STUDENTS</span>
+</div>
+
+<div class="page-hero">
+  <span class="eyebrow">수업 신청</span>
+  <h1>암기가 아니라 구조로,<br>필요한 만큼만 배우는 방식</h1>
+  <p class="lede">줌 그룹수업부터 1:1 개인과외까지 — 인원과 밀도가 다른 세 가지 방식 중 지금 상황에 맞는 걸 고르세요.</p>
+</div>
+
+<main>
+  <section>
+    <div class="ladder">
+      <div class="tier">
+        <span class="tier-name">줌 그룹수업</span>
+        <span class="tier-price">기수제 모집 · 소규모 정원</span>
+        <ul>
+          <li>화학1 / 화학2 / 통합과학 단원별 개념완성</li>
+          <li>계단모형·ㅏ공식 등 시그니처 개념 정리</li>
+          <li>실시간 줌 진행, 다시보기 제공</li>
+        </ul>
+        <a class="btn btn-line" href="#">모집 일정 확인하기</a>
+      </div>
+      <div class="tier featured">
+        <span class="eyebrow">추천</span>
+        <span class="tier-name">소수정예 프리미엄</span>
+        <span class="tier-price">정원 제한 · 그룹 심화반</span>
+        <ul>
+          <li>취약 단원 진단 후 맞춤 문제 구성</li>
+          <li>검증된 변형문제로 실전 감각 훈련</li>
+          <li>그룹수업 대비 밀도 높은 첨삭</li>
+        </ul>
+        <span class="cap">정원이 차면 다음 기수로 안내드립니다</span>
+        <a class="btn btn-primary" href="#">신청하기</a>
+      </div>
+      <div class="tier">
+        <span class="tier-name">1:1 개인과외</span>
+        <span class="tier-price">완전 맞춤 · 최고 밀도</span>
+        <ul>
+          <li>학생 진도·목표에 맞춘 커리큘럼</li>
+          <li>대치동 화학연구소 방문 또는 줌 진행</li>
+          <li>문항 설계까지 개인 맞춤 제작</li>
+        </ul>
+        <a class="btn btn-line" href="#">문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">왜 다르게 설명하나</h2>
+    <div class="why-grid">
+      <div class="why">
+        <h3>계단모형</h3>
+        <p>금속 반응성 순서를 외우는 표가 아니라 눈에 보이는 계단으로 이해합니다.</p>
+      </div>
+      <div class="why">
+        <h3>ㅏ 공식</h3>
+        <p>화학식량·몰·질량·입자 수를 하나의 도식으로 정리해, 단원이 바뀌어도 같은 틀로 풉니다.</p>
+      </div>
+      <div class="why">
+        <h3>검증된 변형문제</h3>
+        <p>숫자만 바꾼 문제가 아니라, 조건을 역산해 끝까지 앞뒤가 맞는 문제로 연습합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">문제 미리보기</h2>
+    <div class="preview-card">
+      <p class="eq">B(aq) + H₂O(l) ⇌ BH⁺(aq) + OH⁻(aq)  Kb</p>
+      <div class="preview-table-wrap">
+        <table class="preview-table">
+          <thead>
+            <tr><th>혼합 수용액</th><th>0.2M B(aq)</th><th>y M NaOH(aq)</th><th>0.2M HCl(aq)</th><th>[B]/[BH⁺]</th><th>[OH⁻]/[H₃O⁺]</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>(가)</td><td>40</td><td>40</td><td>40</td><td>3</td><td>—</td></tr>
+            <tr><td>(나)</td><td>60</td><td>60</td><td>75</td><td>—</td><td>10⁴</td></tr>
+            <tr><td>(다)</td><td>40</td><td>40</td><td>70</td><td>—</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="preview-list">
+        <li>ㄱ. y = 0.1이다.</li>
+        <li>ㄴ. Kb = 1×10⁻⁵이다.</li>
+        <li>ㄷ. (다)의 pH는 5.0보다 크다.</li>
+      </ul>
+      <span class="preview-answer">정답 ⑤ (ㄴ, ㄷ)</span>
+      <p class="preview-note">※ 수능 원본 문제가 아니라, 같은 유형·난이도 구조를 그대로 살려 처음부터 새로 설계하고 끝까지 검산까지 마친 오리지널 문항입니다.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">신청 방법</h2>
+    <p style="color:var(--ink-sub); font-size:14.5px; max-width:560px;">
+      아래 버튼으로 신청 폼을 열면 원하는 과정, 희망 일정, 현재 학습 상태를 남길 수 있습니다.
+      확인 후 개별 안내를 드립니다.
+    </p>
+    <a class="btn btn-primary" style="margin-top:16px;" href="#">신청 폼 열기</a>
+  </section>
+</main>
+
+<footer>
+  <span>© 양진석 화학연구소. 대치동.</span>
+  <span>학원 관계자이신가요? <a href="academy.html" style="color:var(--blue);">섭외 문의로 이동</a></span>
+</footer>

@@ -1,0 +1,158 @@
+<title>영상 콘텐츠 · 양진석 화학연구소</title>
+<style>
+  :root {
+    --paper: #EEF1F5; --paper-raised: #FFFFFF;
+    --ink: #16202B; --ink-sub: #57636F;
+    --line: rgba(22, 32, 43, .14);
+    --blue: #1D4E89; --blue-deep: #123762;
+    --red: #B23B30; --gold: #B7862E;
+    --shadow: 0 10px 30px rgba(22, 32, 43, .10);
+    --radius: 4px;
+    --font-kr: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #10161F; --paper-raised: #171F2B;
+      --ink: #E6ECF2; --ink-sub: #93A2AF;
+      --line: rgba(230, 236, 242, .16);
+      --blue: #6FA8DC; --blue-deep: #3E7CB1;
+      --red: #E2695C; --gold: #E3B15C;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #10161F; --paper-raised: #171F2B;
+    --ink: #E6ECF2; --ink-sub: #93A2AF;
+    --line: rgba(230, 236, 242, .16);
+    --blue: #6FA8DC; --blue-deep: #3E7CB1;
+    --red: #E2695C; --gold: #E3B15C;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  }
+  :root[data-theme="light"] {
+    --paper: #EEF1F5; --paper-raised: #FFFFFF;
+    --ink: #16202B; --ink-sub: #57636F;
+    --line: rgba(22, 32, 43, .14);
+    --blue: #1D4E89; --blue-deep: #123762;
+    --red: #B23B30; --gold: #B7862E;
+    --shadow: 0 10px 30px rgba(22, 32, 43, .10);
+  }
+
+  * , *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--font-kr); line-height: 1.7; word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 800; letter-spacing: -0.01em; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--blue);
+  }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; border-bottom: 1px solid var(--line);
+    max-width: 1040px; margin: 0 auto;
+  }
+  .topbar a.home { font-weight: 800; text-decoration: none; font-size: 14.5px; }
+  .topbar .crumb { font-size: 13px; color: var(--ink-sub); font-family: var(--font-mono); }
+
+  .page-hero {
+    max-width: 1040px; margin: 0 auto; padding: 64px 24px 40px;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap;
+  }
+  .page-hero h1 { font-size: clamp(26px, 4.4vw, 40px); line-height: 1.32; margin: 14px 0 16px; }
+  .page-hero p.lede { color: var(--ink-sub); font-size: 16px; max-width: 520px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 13px 20px; border-radius: var(--radius); text-decoration: none;
+    font-weight: 700; font-size: 14px; background: var(--blue); color: #fff;
+    transition: opacity .15s ease; white-space: nowrap;
+  }
+  .btn:hover { opacity: .88; }
+  .btn-line { background: transparent; border: 1px solid var(--line); color: var(--ink); }
+
+  main { max-width: 1040px; margin: 0 auto; padding: 0 24px 90px; }
+  section { margin-bottom: 64px; }
+  .section-title { font-size: 20px; margin-bottom: 22px; }
+
+  .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .cat {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .cat h3 { font-size: 16px; }
+  .cat p { margin: 0; font-size: 13.5px; color: var(--ink-sub); }
+
+  .vod-card {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
+    box-shadow: var(--shadow);
+  }
+  .vod-card h2 { font-size: 18px; }
+  .vod-card p { margin: 6px 0 0; color: var(--ink-sub); font-size: 13.5px; max-width: 460px; }
+
+  footer {
+    max-width: 1040px; margin: 0 auto; padding: 40px 24px 64px;
+    border-top: 1px solid var(--line); font-size: 12.5px; color: var(--ink-sub);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+</style>
+
+<div class="topbar">
+  <a class="home" href="brand-home.html">양진석 화학연구소</a>
+  <span class="crumb">WATCH</span>
+</div>
+
+<div class="page-hero">
+  <div>
+    <span class="eyebrow">화학양진석티비</span>
+    <h1>무료로 먼저 들어보고 판단하세요</h1>
+    <p class="lede">개념 강의와 수능 기출 해설을 유튜브에서 무료로 공개합니다. 수업을 신청하기 전에 설명 방식이 맞는지 먼저 확인해보세요.</p>
+  </div>
+  <a class="btn" href="https://www.youtube.com/@TV-fs6yx" target="_blank" rel="noopener">유튜브 채널 바로가기</a>
+</div>
+
+<main>
+  <section>
+    <h2 class="section-title">카테고리</h2>
+    <div class="cat-grid">
+      <a class="cat" href="https://youtu.be/jnK92rXTa2w" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+        <h3>화학Ⅰ 개념정리</h3>
+        <p>계단모형·ㅏ공식으로 단원별 핵심 구조를 잡는 강의</p>
+        <span style="font-size:12.5px; font-weight:700; color:var(--blue);">▶ 하드트레이닝 화학Ⅰ (EBS) 보기</span>
+      </a>
+      <div class="cat">
+        <h3>화학Ⅱ 개념정리</h3>
+        <p>화학Ⅰ에서 확장되는 심화 개념을 같은 방식으로 연결</p>
+      </div>
+      <div class="cat">
+        <h3>통합과학</h3>
+        <p>기초 개념부터 구조로 이해하는 통합과학 강의</p>
+      </div>
+      <a class="cat" href="https://www.youtube.com/watch?v=gAbpJpHM7l0" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+        <h3>수능 기출 해설</h3>
+        <p>최신 기출을 조건 해석부터 검산까지 짚어주는 해설</p>
+        <span style="font-size:12.5px; font-weight:700; color:var(--blue);">▶ 2028 통합과학 예시문항 해설 보기</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="vod-card">
+      <div>
+        <h2>유료 VOD · 멤버십</h2>
+        <p>무료 영상보다 더 깊은 과정별 완강 커리큘럼과 검증된 변형문제집은 유료 VOD로 제공됩니다.</p>
+      </div>
+      <a class="btn btn-line" href="#">VOD 안내 보기</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 양진석 화학연구소. 대치동.</span>
+  <span>수업을 듣고 싶다면 <a href="apply.html" style="color:var(--blue);">수업 신청으로 이동</a></span>
+</footer>
